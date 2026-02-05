@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Building2, Home, Tractor } from "lucide-react";
+import { Building2, Home, Tractor, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+
 import servicePavimentacao from "@/assets/service-pavimentacao.jpg";
 import serviceResidencial from "@/assets/service-residencial.jpg";
 import serviceRural from "@/assets/service-rural.jpg";
@@ -101,6 +103,16 @@ const Services = () => {
           {services.map((service, index) => (
             <ServiceCard key={service.title} service={service} index={index} />
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Link
+            to="/produtos"
+            className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-bold text-base px-8 py-4 rounded-lg hover:brightness-110 transition-all duration-200 shadow-accent"
+          >
+            Ver Todos os Produtos
+            <ArrowRight size={18} />
+          </Link>
         </div>
       </div>
     </section>
